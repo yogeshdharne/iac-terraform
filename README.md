@@ -44,7 +44,7 @@ resource "aws_db_instance" "default" {
 }
 
 #Usage
-Install Teraform and Rune Below Command.
+Install Teraform Version 0.12.19 and Rune Below Command.
 
 terraform init
 terraform apply 
