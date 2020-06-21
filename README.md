@@ -14,6 +14,21 @@ resource "aws_key_pair" "auth" {
   public_key = ""
 }
 
+# Allow certain ip for ssh port
+Replace and add your public ip in cidr_blocks for allowing certain ip ssh.
+
+resource "aws_security_group" "web" {
+  name        = "web"
+  vpc_id      = "${aws_vpc.custom_vpc.id}"
+  description = "Created by terraform"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 # RDS User Password
 Add RDS user password in below parameter.
 resource "aws_db_instance" "default" {
