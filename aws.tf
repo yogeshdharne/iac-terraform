@@ -206,7 +206,7 @@ resource "aws_security_group" "web" {
 #SSH Public Key For Accessing Web EC2 Server
 resource "aws_key_pair" "auth" {
   key_name   = "mytestpubkey"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtokFRnE47PsNY4UA/5kGgW1e3UBMLQsMhf+g2mI2IYEX7qKxaMCMim3uJgs8pIvD0zy6rxUUCOBfZOQtkzIMzVPv6SNPk0H7BvnXIwmlBVogIa5gWdpQXW10MD6TPeuAaghPPdDWfYkOosKIT2uf9hk7NVAwrGoBamSx10+Ln+ShvkEs5UY1Y6FIqvjGbeOzers3ANMYk40cEJdZQ4NmrXuR3A1CUwfkXAfu3keXEzVCzT5gvwnS94CdTx2+K6g3rFk0MyAbrAfaRNreoP6djfpld/nI+NWVoe5gDH1efz/7JVOIHUHo7pesfEIht/MmpoIJVr2X9DRzOJPoLDxh7 mosip@mosip-devops"
+  public_key = ""
 }
 
 
@@ -296,7 +296,7 @@ resource "aws_db_instance" "default" {
   instance_class         = "db.t3.micro"
   name                   = "custom_db"
   username               = "custom_admin"
-  password               = "qweR543789"
+  password               = ""
   db_subnet_group_name   = "${aws_db_subnet_group.default.id}"
   vpc_security_group_ids = ["${aws_security_group.mydb1.id}"]
 }
